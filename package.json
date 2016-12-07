@@ -1,0 +1,11 @@
+{
+  "name": "checklist-builder",
+  "version": "1.0.0",
+  "description": "A basic Vue application to view, edit, and manage checklists.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael Wood",
+  "license": "MIT"
+}

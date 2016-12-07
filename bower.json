@@ -1,0 +1,22 @@
+{
+  "name": "checklist-builder",
+  "authors": [
+    "Michael Wood <mwood@markettraders.com>"
+  ],
+  "description": "A basic Vue application to view, edit, and manage checklists.",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "dependencies/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "vue": "^2.1.4"
+  }
+}
