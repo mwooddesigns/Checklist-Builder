@@ -4,8 +4,16 @@
   "description": "A basic Vue application to view, edit, and manage checklists.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass": "node-sass --output-style compressed src/scss/master.scss dist/css/master.css",
+    "sass-dev": "node-sass src/scss/master.scss dist/css/master.css",
+    "sass-w": "node-sass --output-style compressed -rw src/scss/master.scss dist/css/master.css",
+    "autoprefixer": "postcss -u autoprefixer -r dist/css/master.css",
+    "buildCss": "npm run sass && npm run autoprefixer"
   },
   "author": "Michael Wood",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^6.5.3",
+    "postcss-cli": "^2.6.0"
+  }
 }
