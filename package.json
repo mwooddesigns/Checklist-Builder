@@ -8,12 +8,14 @@
     "sass-dev": "node-sass src/scss/master.scss dist/css/master.css",
     "sass-w": "node-sass --output-style compressed -rw src/scss/master.scss dist/css/master.css",
     "autoprefixer": "postcss -u autoprefixer -r dist/css/master.css",
-    "buildCss": "npm run sass && npm run autoprefixer"
+    "buildCss": "npm run sass && npm run autoprefixer",
+    "concatJs": "node build-scripts/concatJS.js"
   },
   "author": "Michael Wood",
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^6.5.3",
+    "buildify": "^0.4.0",
     "postcss-cli": "^2.6.0"
   }
 }
