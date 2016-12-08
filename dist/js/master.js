@@ -8219,22 +8219,24 @@ return Vue$3;
 
 })));
 
+"use strict";
 /* COOKIE FUNCTIONS */
 function createCookie(name, value, days) {
+	var expires = "";
 	if (days) {
 		var date = new Date();
 		date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-		var expires = "; expires=" + date.toGMTString();
-	} else var expires = "";
+		expires = "; expires=" + date.toGMTString();
+	}
 	document.cookie = name + "=" + value + expires + "; path=/";
 }
 
 function readCookie(name) {
 	var nameEQ = name + "=";
-	var ca = document.cookie.split(';');
+	var ca = document.cookie.split(";");
 	for (var i = 0; i < ca.length; i++) {
 		var c = ca[i];
-		while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+		while (c.charAt(0) == " ") c = c.substring(1, c.length);
 		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
 	}
 	return null;
@@ -8262,7 +8264,7 @@ var data = {
 };
 
 var app = new Vue({
-	el: '#todoList',
+	el: "#todoList",
 	data: data,
 	methods: {
 		addTask: function() {
@@ -8273,21 +8275,21 @@ var app = new Vue({
 		},
 		saveList: function() {
 			var json_str = JSON.stringify(this.taskList);
-			createCookie('taskListString', json_str);
+			createCookie("taskListString", json_str);
 		},
 		getList: function() {
-			var json_str = readCookie('taskListString');
+			var json_str = readCookie("taskListString");
 			if (json_str != null) {
 				var parsed = JSON.parse(json_str);
 				this.taskList = parsed;
 			}
 		}
 	},
-	beforeMount() {
-		//this.getList();
+	beforeMount: function() {
+		this.getList();
 	},
-	updated() {
-		//this.saveList();
+	updated: function() {
+		this.saveList();
 	}
 });
 
@@ -8297,9 +8299,9 @@ var Task = function(t) {
 }
 
 /* Handler for hitting enter instead of using button */
-// function handleKeyUp(e) {
-// 	var key = e.keyCode;
-// 	if(key == 13) {
-// 		 app.addTask();
-// 		 }
-// }
+function handleKeyUp(e) {
+	var key = e.keyCode;
+	if (key == 13) {
+		app.addTask();
+	}
+}

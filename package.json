@@ -8,15 +8,20 @@
     "sass-dev": "node-sass src/scss/master.scss dist/css/master.css",
     "sass-w": "node-sass --output-style compressed -rw src/scss/master.scss dist/css/master.css",
     "autoprefixer": "postcss -u autoprefixer -r dist/css/master.css",
-    "buildCss": "npm run sass && npm run autoprefixer",
+    "buildCss": "npm run sass && npm run autoprefixer && cssmin dist/css/master.css > dist/css/master.min.css",
+    "lint": "eslint src/js/*.js",
     "concat": "node build-scripts/concatJS.js",
-    "build": "npm run buildCss"
+    "uglify": "uglifyjs dist/js/master.js -m -c -o dist/js/master.min.js",
+    "buildJs": "npm run lint && npm run concat && npm run uglify",
+    "build": "npm run buildCss && npm run buildJs"
   },
   "author": "Michael Wood",
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^6.5.3",
     "buildify": "^0.4.0",
-    "postcss-cli": "^2.6.0"
+    "cssmin": "^0.4.3",
+    "postcss-cli": "^2.6.0",
+    "uglify-js": "^2.7.5"
   }
 }

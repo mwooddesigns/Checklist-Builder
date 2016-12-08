@@ -4,7 +4,7 @@ var data = {
 };
 
 var app = new Vue({
-	el: '#todoList',
+	el: "#todoList",
 	data: data,
 	methods: {
 		addTask: function() {
@@ -15,21 +15,21 @@ var app = new Vue({
 		},
 		saveList: function() {
 			var json_str = JSON.stringify(this.taskList);
-			createCookie('taskListString', json_str);
+			createCookie("taskListString", json_str);
 		},
 		getList: function() {
-			var json_str = readCookie('taskListString');
+			var json_str = readCookie("taskListString");
 			if (json_str != null) {
 				var parsed = JSON.parse(json_str);
 				this.taskList = parsed;
 			}
 		}
 	},
-	beforeMount() {
-		//this.getList();
+	beforeMount: function() {
+		this.getList();
 	},
-	updated() {
-		//this.saveList();
+	updated: function() {
+		this.saveList();
 	}
 });
 
@@ -39,9 +39,9 @@ var Task = function(t) {
 }
 
 /* Handler for hitting enter instead of using button */
-// function handleKeyUp(e) {
-// 	var key = e.keyCode;
-// 	if(key == 13) {
-// 		 app.addTask();
-// 		 }
-// }
+function handleKeyUp(e) {
+	var key = e.keyCode;
+	if (key == 13) {
+		app.addTask();
+	}
+}
