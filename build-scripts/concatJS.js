@@ -5,7 +5,7 @@ var env = "development";
 
 var prodDependencies = ['./dependencies/vue/dist/vue.min.js'];
 var devDependencies = ['./dependencies/vue/dist/vue.js'];
-var srcFiles = ['./src/js/index.js'];
+var srcFiles = ['./src/js/functions.js', './src/js/components/task-item.js', './src/js/index.js'];
 
 switch (env) {
   case "development":

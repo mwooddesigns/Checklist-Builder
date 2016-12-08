@@ -1,2 +1,11 @@
 @import "../../dependencies/normalize-scss/_normalize.scss";
 @import "partials/_config.scss";
+@import "partials/_mixins.scss";
+@import "partials/_layout.scss";
+@import "partials/_io.scss";
+@import "partials/_components.scss";
+@import "partials/_transitions.scss";
+
+body {
+	background-color: $bgcolor;
+}

@@ -9,7 +9,8 @@
     "sass-w": "node-sass --output-style compressed -rw src/scss/master.scss dist/css/master.css",
     "autoprefixer": "postcss -u autoprefixer -r dist/css/master.css",
     "buildCss": "npm run sass && npm run autoprefixer",
-    "concatJs": "node build-scripts/concatJS.js"
+    "concat": "node build-scripts/concatJS.js",
+    "build": "npm run buildCss"
   },
   "author": "Michael Wood",
   "license": "MIT",

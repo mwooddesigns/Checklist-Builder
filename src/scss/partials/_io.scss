@@ -1,0 +1,26 @@
+.controls {
+	text-align: center;
+}
+input, button {
+	display: inline-block;
+	margin: 0;
+	box-sizing: border-box;
+}
+input {
+	width: 100%;
+	padding: 10px;
+}
+button {
+	margin-top: 10px;
+	width: 40%;
+	width: 100%;
+	padding: 10px;
+}
+.fa {
+	font-size: 25px;
+	cursor: pointer;
+}
+.fa-check-circle-o {
+	margin-right: 10px;
+	color: green;
+}
