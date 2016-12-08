@@ -7,4 +7,15 @@ if(isset($_GET['get_id'])) {
   $result = json_encode(array($name, $config));
   exit($result);
 }
+
+if(isset($_GET['create'])) {
+  $name = $_GET['name'];
+  $config = $_GET['config'];
+  $result = $crud->create($name, $config);
+  if($result) {
+    exit("Row added");
+  } else {
+    exit("An error occured");
+  }
+}
 ?>
