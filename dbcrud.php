@@ -10,7 +10,7 @@ if(isset($_GET['get_id'])) {
 
 if(isset($_GET['create'])) {
   $name = $_GET['name'];
-  $config = $_GET['config'];
+  $config = urldecode($_GET['config']);
   $result = $crud->create($name, $config);
   if($result) {
     exit("Row added");
