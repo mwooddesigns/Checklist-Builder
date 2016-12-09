@@ -25,6 +25,9 @@
         ],
         "no-undef": [
           1
+        ],
+        "no-console": [
+          1
         ]
     }
 }
